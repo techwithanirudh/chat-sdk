@@ -369,11 +369,12 @@ function PureMultimodalInput({
           </PromptInputTools>
 
           {status === 'submitted' ? (
-            <StopButton stop={stop} setMessages={setMessages} />
+            <StopButton stop={stop} setMessages={setMessages} data-testid="stop-button" />
           ) : (
             <PromptInputSubmit
               status={status}
               disabled={!input.trim() || uploadQueue.length > 0}
+              data-testid="send-button"
               className="p-2 rounded-full transition-colors duration-200 text-primary-foreground bg-primary hover:bg-primary/90 disabled:bg-muted disabled:text-muted-foreground"
             >
               <ArrowUpIcon size={16} />
@@ -456,6 +457,7 @@ function PureModelSelectorCompact({
       <PromptInputModelSelectTrigger
         type="button"
         className="text-xs focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 data-[state=open]:ring-0 data-[state=closed]:ring-0"
+        data-testid="model-selector"
       >
         {selectedModel?.name || 'Select model'}
       </PromptInputModelSelectTrigger>
