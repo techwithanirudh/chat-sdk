@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
       {
         hostname: 'avatar.vercel.sh',
       },
+      {
+        hostname: 'images.unsplash.com',
+      }
     ],
   },
 };
